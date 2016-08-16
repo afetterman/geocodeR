@@ -19,7 +19,7 @@ map("county")
 infile <- "sample_addresses"
 data <- read.csv(paste0('./', infile, '.csv'))
 
-txt_data <- read.table(paste0('./', infile, '.txt'), header = TRUE, sep = ';')
+txt_data <- read.table(paste0('./', infile, '.txt'), header = TRUE, sep = ';', stringsAsFactors=F)
 
 # get the address list, and append "California" to the end to increase accuracy 
 # (change or remove this if your address already include a country etc.)
@@ -46,7 +46,6 @@ gt_lat2
 
 geo_reply1 = geocode(ad1, output='all', messaging=TRUE, override_limit=TRUE)
 geo_reply2 = geocode(txt_addresses, output='all', messaging=TRUE, override_limit=TRUE)
-
 
 
 
